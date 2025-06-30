@@ -22,16 +22,16 @@ nmcli device status
 iw dev wlan0 link
 sudo dmesg | grep -i rtw
 journalctl -k -b | grep -i rtw
-
+```
 
 常見訊息：
-
+```
     timed out to flush queue
 
     reset
 
     usb disconnect
-
+```
 若出現頻繁，建議進行驅動更新。
 
 
@@ -60,16 +60,16 @@ sudo ./remove-driver.sh
 
 針對公共環境可優化參數
 ```bash
-nmcli connection modify "NewTaipei" 802-11-wireless.powersave 2
-nmcli connection modify "NewTaipei" 802-11-wireless.band bg
-nmcli connection modify "NewTaipei" 802-11-wireless.bssid 1C:5F:2B:24:8C:60
-nmcli connection modify "NewTaipei" ipv6.method ignore
-nmcli connection modify "NewTaipei" ipv4.dhcp-timeout 60
+nmcli connection modify "<YOUR WiFi SSID>" 802-11-wireless.powersave 2
+nmcli connection modify "<YOUR WiFi SSID>" 802-11-wireless.band bg
+nmcli connection modify "<YOUR WiFi SSID>" 802-11-wireless.bssid <YOUR WiFi BSSID>
+nmcli connection modify "<YOUR WiFi SSID>" ipv6.method ignore
+nmcli connection modify "<YOUR WiFi SSID>" ipv4.dhcp-timeout 60
 
 ```
 再重新啟用：
 ```bash
-nmcli connection down "NewTaipei" && sleep 5 && nmcli connection up "NewTaipei"
+nmcli connection down "<YOUR WiFi SSID>" && sleep 5 && nmcli connection up "<YOUR WiFi SSID>"
 
 ```
 

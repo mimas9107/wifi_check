@@ -62,7 +62,7 @@ sudo ./remove-driver.sh
 ```bash
 nmcli connection modify "<YOUR WiFi SSID>" 802-11-wireless.powersave 2
 nmcli connection modify "<YOUR WiFi SSID>" 802-11-wireless.band bg
-nmcli connection modify "<YOUR WiFi SSID>" 802-11-wireless.bssid <YOUR WiFi BSSID>
+##這裡除非是確定固定的熱點 BSSID才有可能固定, 所以這行註解起來 nmcli connection modify "<YOUR WiFi SSID>" 802-11-wireless.bssid <YOUR WiFi BSSID> 
 nmcli connection modify "<YOUR WiFi SSID>" ipv6.method ignore
 nmcli connection modify "<YOUR WiFi SSID>" ipv4.dhcp-timeout 60
 
@@ -199,16 +199,6 @@ plt.gcf().autofmt_xdate()
 plt.show()
 
 ```
-
-
-### 8️⃣ License
-
-可標示 MIT 或 CC0 (依你的喜好)
-也可列出感謝
-* morrownr/88x2bu
-* NetworkManager
-* iw
-
 ---
 
 ## 🚀 結論
